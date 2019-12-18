@@ -99,16 +99,19 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <source-file src="src/ios/AppDelegate+FirebaseDynamicLinksPlugin.m" />
         <header-file src="src/ios/FirebaseDynamicLinksPlugin.h" />
         <source-file src="src/ios/FirebaseDynamicLinksPlugin.m" />
-
+        <preference name="IOS_FIREBASE_CORE_VERSION" default="~> 6.3.0"/>
+        <preference name="IOS_GOOGLE_CLOUD_VERSION" default="~> 6.3.0"/>
+        <preference name="IOS_FIREBASE_DYNAMIC_LINKS_VERSION" default="~> 6.3.0"/>
         <podspec>
             <config>
                 <source url="https://github.com/CocoaPods/Specs.git"/>
             </config>
             <pods>
-                <pod name="Firebase/Analytics" spec="~> 6.3.0" />
-                <pod name="Firebase/DynamicLinks" spec="~> 6.3.0" />
+                <pod name="Firebase/Core" spec="$IOS_FIREBASE_CORE_VERSION"/>
+                <pod name="Firebase/DynamicLinks" spec="$IOS_FIREBASE_DYNAMIC_LINKS_VERSION"/>
             </pods>
         </podspec>
+        <framework src="GoogleCloudMessaging" type="podspec" spec="$IOS_GOOGLE_CLOUD_VERSION" />
     </platform>
 
 </plugin>
